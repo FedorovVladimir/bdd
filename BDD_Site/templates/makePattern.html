@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <title>make patterns</title>
+    </head>
+     <body>
+       <h3>Одиночка готов!</h3>
+       <p><pre id="code">public class {{ name }} {
+    private static {{ name }} ourInstance = new {{ name }}();
+
+    public static {{ name }} getInstance() {
+        return ourInstance;
+    }
+
+    private {{ name }}() {
+    }
+}
+</pre></p>
+     </body>
+</html>

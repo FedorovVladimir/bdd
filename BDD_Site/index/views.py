@@ -6,3 +6,9 @@ from django.http import HttpResponseNotFound
 
 def index (request):
     return render(request, 'index.html')
+
+def makePattern (request):
+    if request.method == "POST":
+        name =  request.POST.get("name")
+        return render(request, 'makePattern.html', {"name" : name})
+    return render(request, 'index.html')
