@@ -1,5 +1,4 @@
 Feature: OpenIndexPage
-    Scenario: S1
+    Scenario: Успешное открытие главное страницы сайта
         When Open index page site
-        Then I see index page
-
+        Then I see index page and title "create patterns"

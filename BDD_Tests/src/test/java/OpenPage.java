@@ -1,13 +1,15 @@
-import cucumber.api.java.en.And;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class MyStepdefs {
+import static org.junit.Assert.assertEquals;
 
-    private String url = "http://ya.ru/";//"http://127.0.0.1:8000";
+public class OpenPage {
+
+    private String url = "http://127.0.0.1:8000";
     private static final ChromeDriver driver;
 
     static {
@@ -22,12 +24,14 @@ public class MyStepdefs {
         driver.get(url);
     }
 
-    @Then("^I see index page$")
+    @Then("^I see index page and title \"create patterns\"$")
     public void iSeeIndexPage() {
         String titleText = driver.findElement(By.tagName("title")).getText();
-        if (!titleText.equals("create patterns")) {
-            System.out.println("test failed");
-        }
+        assertEquals("create patterns", titleText);
+    }
+
+    @After
+    public void close() {
         driver.quit();
     }
 }
