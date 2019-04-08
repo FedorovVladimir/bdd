@@ -26,7 +26,7 @@ public class OpenPage {
 
     @Then("^I see index page and title \"create patterns\"$")
     public void iSeeIndexPage() {
-        String titleText = driver.findElement(By.tagName("title")).getText();
+        String titleText = driver.getTitle();
         assertEquals("create patterns", titleText);
     }
 
